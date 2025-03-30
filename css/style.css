@@ -1,0 +1,156 @@
+/* ↓↓↓ === Базові сталі == ↓↓↓ */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.2s ease-in;
+}
+.container {
+  max-width: 1200px;
+  padding-inline: 1rem;
+  margin-inline: auto;
+}
+body {
+  color: whitesmoke;
+  background-color: darkslategrey;
+  display: flex;
+  flex-direction: column;
+}
+/* ↑↑↑ === Базові сталі == ↑↑↑ */
+
+/* ↓↓↓ === Стилі для заголовка === ↓↓↓ */
+header {
+  border-bottom: 1px solid whitesmoke;
+  margin-bottom: 1rem;
+}
+h1 {
+  text-align: center;
+  padding-block: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+/* ↑↑↑ === Стилі для заголовка === ↑↑↑ */
+
+/* ↓↓↓ === Стилі для слайдера === ↓↓↓ */
+main {
+  flex: 1 1 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 1rem;
+}
+.slider__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(1rem);
+}
+.container-slider {
+  overflow: hidden;
+  padding-block: 4rem;
+  padding-inline: 6rem;
+  background-color: #1b1f29;
+  position: relative;
+  display: flex;
+}
+/* ↓↓↓ === Слайди === ↓↓↓ */
+.slider__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.slider__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.slider__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ↑↑↑ === Слайди === ↑↑↑ */
+/* ↓↓↓ === Елемнти контролю слойдером === ↓↓↓ */
+.slider__btn-prev,
+.slider__btn-next {
+  position: absolute;
+  background-color: #1d1c21;
+  height: 6rem;
+  width: 3rem;
+  transform: translate(0, 50%);
+  bottom: 50%;
+}
+.slider__btn-next {
+  right: 1rem;
+}
+.slider__btn-prev {
+  left: 1rem;
+}
+.slider__btn-prev i,
+.slider__btn-next i {
+  pointer-events: none;
+  font-size: 2rem;
+  transform: scaleY(2);
+}
+.slider__btn-prev:hover,
+.slider__btn-next:hover{
+  transform: translate(0, 50%) scale(1.1);
+}
+.slider__btn-prev:active,
+.slider__btn-next:active{
+  transform: translate(0, 50%) scale(0.8);
+}
+.container-points{
+  /* border: 1px double red; */
+  position: absolute;
+  width: 50%;
+  bottom: 1rem;
+  right: 50%;
+  transform: translate(50%, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.slider__point{
+  border: 2px solid whitesmoke;
+  border-radius: 50%;
+  width: 0.2rem;
+  height: 0.2rem;
+}
+.slider__point.activ{
+  width: 1rem;
+  height: 1rem;
+}
+/* ↑↑↑ === Елемнти контролю слойдером === ↑↑ */
+/* ↑↑↑ === Стилі для слайдера === ↑↑↑ */
+
+/* ↓↓↓ === Стилі для підвалу === ↓↓↓ */
+footer {
+  border-top: 1px solid whitesmoke;
+  margin-top: 1rem;
+  text-align: center;
+}
+footer a {
+  display: inline-block;
+  padding-block: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+/* ↑↑↑ === Стилі для підвалу === ↑↑↑ */
+
+@media  (max-width: 768px) {
+  h1{
+    font-size: 1rem;
+  }
+  .slider__item{
+    grid-template-columns: 1fr;
+  }
+  .slider__item img{
+    grid-row-start: 1;
+  }
+}
